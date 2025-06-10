@@ -1,0 +1,13 @@
+services:
+  ai-text-toolkit:
+    build: .
+    container_name: ai-text-toolkit
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+    # Optional: mount for live code edits
+    volumes:
+      - ./app:/code/app:ro
+      - ./boot:/boot:ro
